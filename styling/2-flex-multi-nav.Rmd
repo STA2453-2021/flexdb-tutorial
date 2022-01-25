@@ -1,0 +1,106 @@
+---
+title: "Page Navigation Menus"
+output: flexdashboard::flex_dashboard
+---
+
+Page 1 {data-navmenu="Menu A"}
+=====================================
+
+Row 
+-------------------------------------
+    
+### Chart 1
+    
+```{r}
+library(tidyverse)
+library(highcharter)
+
+data(diamonds, economics_long, package = "ggplot2")
+data(penguins, package = "palmerpenguins")
+
+economics_long2 <- economics_long %>%
+  filter(variable %in% c("pop", "uempmed", "unemploy"))
+
+hchart(economics_long2, "line", hcaes(x = date, y = value01, group = variable))
+```
+   
+Row {.tabset .tabset-fade}
+-------------------------------------
+   
+### Chart 2
+
+```{r}
+
+x <- diamonds$price
+hchart(x)
+
+```   
+ 
+### Chart 3
+    
+```{r}
+
+hchart(density(x), type = "area", color = "#B71C1C", name = "Price")
+```
+
+
+
+Page 2 {data-navmenu="Menu A"}
+=====================================  
+
+Row 
+-------------------------------------
+    
+### Chart 1
+    
+```{r}
+x <- diamonds$cut
+hchart(x, type = "column")
+```
+   
+Row {.tabset .tabset-fade}
+-------------------------------------
+   
+### Chart 2
+
+```{r}
+
+mtcars2 <- mtcars[1:20, ]
+x <- dist(mtcars2)
+hchart(x)
+
+```   
+ 
+### Chart 3
+    
+```{r}
+
+hchart(cor(mtcars))
+```
+
+
+Page 3 {data-navmenu="Menu B"}
+=====================================
+
+### Chart 4
+    
+```{r}
+
+hchart(penguins, "scatter", hcaes(x = body_mass_g, y = flipper_length_mm , group = species))
+```
+
+
+Page 4 {data-navmenu="Menu B" data-icon="fa-hashtag"}
+=====================================
+
+
+### Chart 5
+    
+```{r}
+penguins2 <- penguins %>%
+  count(species, island) %>%
+  glimpse()
+
+hchart(penguins2, "column", hcaes(x = island, y = n, group = species))
+```
+

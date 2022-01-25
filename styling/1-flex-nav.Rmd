@@ -1,0 +1,52 @@
+---
+title: "Navigation Bar"
+output: 
+  flexdashboard::flex_dashboard:
+    social: [ "twitter", "facebook", "menu" ]
+    navbar:
+      - { title: "About", href: "https:nba.com", align: left }
+      - { title: "Class Site", href: "https://sta-2453.netlify.app/", align: left }
+      
+---
+
+   
+Column 
+-------------------------------------
+   
+```{r}
+library(flexdashboard)
+library(htmltools)
+library(dplyr)
+library(ggplot2)
+library(reactable)
+library(crosstalk)
+library(plotly)
+library(sparkline)
+# source the utils functions
+source(here::here('utils.R'))
+
+# load the full record data
+records <- readr::read_csv(here::here('data', 'nba_season_data.csv'))
+standings <- prepare_standings_data(records)
+
+all_standings <- standings$eastern %>% 
+  bind_rows(standings$western)
+
+```
+   
+Column {.tabset}
+-------------------------------------
+   
+### Eastern
+
+```{r}
+div(class = "box-score-title", "Eastern Conference")
+create_standings_table(standings$eastern)
+```   
+ 
+### Western
+    
+```{r}
+div(class = "box-score-title", "Western Conference")
+create_standings_table(standings$western)
+```

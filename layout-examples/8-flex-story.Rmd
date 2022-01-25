@@ -1,0 +1,58 @@
+---
+title: "Storyboard"
+output: 
+  flexdashboard::flex_dashboard:
+    theme: flatly
+    
+---
+
+Details
+=========================================
+    
+Column 
+-------------------------------------
+    
+### Chart 1
+    
+```{r}
+
+themes <- c('default', 'cosmo', 'bootstrap', 'cerulean',
+            'journal', 'flatly', 'readable', 'spacelab',
+            'united', 'lumen', 'paper', 'sandstone', 'simplex',
+            'yeti')
+
+```
+   
+Column {.tabset}
+-------------------------------------
+   
+### Chart 2
+
+```{r}
+```   
+ 
+### Chart 3
+    
+```{r}
+```
+
+Analysis {.storyboard}
+=========================================
+
+### Frame 1
+
+```{r}
+hist(rnorm(100))
+```
+
+### Frame 2
+
+```{r}
+plot(rnorm(100), rnorm(100))
+```
+
+### Frame 3
+
+```{r}
+DT::datatable(head(cars))
+```

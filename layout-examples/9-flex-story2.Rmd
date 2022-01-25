@@ -1,0 +1,37 @@
+---
+title: "Storyboard Page"
+output: flexdashboard::flex_dashboard
+---
+
+Analysis {.storyboard}
+=========================================
+
+### Frame 1
+
+```{r}
+hist(rnorm(1000))
+```
+
+*** 
+
+Some commentary about Frame 1.
+
+### Frame 2 {data-commentary-width=400}
+
+```{r}
+```
+
+*** 
+
+Some commentary about Frame 2.
+
+Details
+=========================================
+
+Column
+-----------------------------------------
+
+### CHART 1
+
+
+### CHART 2

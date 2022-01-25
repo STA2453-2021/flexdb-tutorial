@@ -1,0 +1,49 @@
+---
+title: "Column Orientation"
+output: flexdashboard::flex_dashboard
+---
+    
+Column
+-------------------------------------
+    
+### My first chart
+    
+```{r}
+library(tidyverse)
+```
+   
+Column
+-------------------------------------
+   
+### The birthplace of R
+
+```{r}
+library(leaflet)
+
+m <- leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lng=174.768, lat=-36.852, popup="The birthplace of R")
+m
+```   
+ 
+### Toronto
+    
+```{r}
+m <- leaflet() %>%
+  addTiles() %>%  
+  addMarkers(lng=-79.373333 , lat= 43.741667, popup="The birthplace of R")
+m
+```
+
+
+Column
+-------------------------------------
+
+### Cars
+
+```{r}
+DT::datatable(mtcars, options = list(
+  bPaginate = FALSE
+))
+```
+
