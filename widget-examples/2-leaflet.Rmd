@@ -31,7 +31,7 @@ m
 ```{r}
 m <- leaflet() %>%
   addTiles() %>%  
-  addMarkers(lng=-79.373333 , lat= 43.741667, popup="The birthplace of R")
+  addMarkers(lng=-79.373333 , lat= 43.741667, popup="Toronto")
 m
 ```
 

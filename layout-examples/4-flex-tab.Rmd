@@ -17,11 +17,14 @@ Column {.tabset}
 ### Chart 2
 
 ```{r}
+hist(rnorm(100))
 ```   
  
 ### Chart 3
     
 ```{r}
+plot(rnorm(100), rnorm(100))
+
 ```
 
 ### Chart 4

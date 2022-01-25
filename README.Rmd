@@ -13,7 +13,9 @@ knitr::opts_chunk$set(
 
 # flexdb-tutorial
 
- [`flexdashboard`](https://pkgs.rstudio.com/flexdashboard/index.html) is an R package for combining visualizations (tabular and graphical) into flexible dashboards. This tutorial will demonstrate the ease of use in building complex layouts through a series of examples. flexdashboard works great with both base R graphics and ggplot, but it really shines when working with other visualization libraries. Specifically:
+ [`flexdashboard`](https://pkgs.rstudio.com/flexdashboard/index.html) is an R package for combining visualizations (tabular and graphical) into flexible dashboards. This tutorial will demonstrate the ease of use in building complex layouts through a series of examples. flexdashboard works great with both base R graphics and ggplot, but it really shines when working with other visualization libraries. 
+ 
+ Here are some of the libraries that are used throughout this presentation along with links to where you can find more information
  
 - JavaScript  visualizations with the [`htmlwidgets` package](https://www.htmlwidgets.org/)
 
@@ -23,9 +25,13 @@ knitr::opts_chunk$set(
 
 - Gauges (`flexdashboard::gauge()`)for displaying values on a meter within a specified range.
 
-- Maps through the leaflet package
+- Maps through the [leaflet package](http://rstudio.github.io/leaflet/)
 
-- The bslib package for adding bootstrap/css styling. 
+- The [bslib package](https://rstudio.github.io/bslib/) for adding bootstrap/css styling. 
+
+- The [highcharter package](https://jkunst.com/highcharter/) for interactive graphics
+
+- The [rbokeh package](https://hafen.github.io/rbokeh/) for interactive graphics
 
 
 This repository contains a series of .Rmd files demonstrating a good selection of the variety that is available through flexdashboard. Just follow along with this README file to know which .Rmd file to use to see the specified flexibility. 
@@ -84,3 +90,6 @@ themes <- c('default', 'cosmo', 'bootstrap', 'cerulean',
 
 In addition, you can use the bslib package to gain the flexibility of modern css frameworks like bootstrap 5. 
 
+## shiny runtime
+
+You can also use shiny to include additional user input capabilities. See the `with-shiny` folder for an example using NBA data. All the code and data is available here on this repo. 
